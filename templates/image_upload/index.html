@@ -1,0 +1,38 @@
+{% extends 'image_upload/main.html' %}
+
+{% block body_block %}
+
+{% load static %}
+
+	<div class="row">
+
+		<br>
+
+		{% if message_1 %}
+			<div class="col-lg-3">
+				<h3 style="padding-left: 25px"> {{ message_1 }} </h3>
+			</div>
+		{% else %}
+			<h3 style="padding-left: 40px"> Загрузите новое изображение, чтобы найти похожие товары </h3>
+		{% endif %}
+
+		<div class="col-lg-3">
+			<img style="padding: 25px" src={{ uploaded_file_url }}>
+		</div>
+	</div>
+
+	<h3 style="padding-left: 25px"> {{ message_2 }} </h3>
+
+	<div class="row">
+
+		{% for image in sim_image_objects %}
+			<div class="col-lg-3">
+				<img style="padding: 25px" class="img-thumbnail" src={% static image.name %}>
+			</div>
+		{% endfor %}
+
+		<p> {{ message }} </p>
+	</div>
+
+
+{% endblock %}
