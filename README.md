@@ -1,5 +1,5 @@
 # recommender
-web app for lightning recommendations
+web app for lightning recommendations (django, keras, sklearn)
 
 'image_preprocessing' module for initial images preprocessing and database creation
 
